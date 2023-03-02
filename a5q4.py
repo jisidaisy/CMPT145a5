@@ -54,3 +54,28 @@ def count_in(node_chain, value):
 
     return count
 
+def replace_in(node_chain, target, replacement):
+    """
+    Purpose:
+        Replaces each occurrence of the target value with the replacement
+    Pre-conditions:
+        : param node_chain : a node-chain, possibly empty
+        : param target: a value that might appears in the node chain
+        : param replacement : the value to replace the target
+
+    Post-condition:
+        Each occurrence of the target value in the chain is replaced with the replacement
+        value.
+    Return:
+        None
+    """
+    # initialize curr to first node in chain
+    curr = node_chain
+
+    # loop over the chain
+    while curr is not None:
+
+        if curr.get_data() == target:  # curr's value is target
+            curr.set_data(replacement)  # update the value of curr to replacement
+
+        curr = curr.get_next()  # move curr to next node
